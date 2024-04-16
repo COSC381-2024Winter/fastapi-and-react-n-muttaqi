@@ -50,3 +50,11 @@ def put_movie(id: int, movie: Movie):
     mov.name = movie.name
     mov.cast = movie.cast
     return get_movie(id)
+
+@app.delete("/movies/{id}")
+def delete_movie(id: int):
+    if id >= len(movies) or id < 0 or not movies[id]:
+        return None
+    mov = get_movie(id)
+    movies[id] = None
+    return mov
