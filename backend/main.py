@@ -41,3 +41,12 @@ def get_movie(id: int):
         "name": mov.name,
         "cast": mov.cast
     }
+
+@app.put("/movies/{id}")
+def put_movie(id: int, movie: Movie):
+    if id >= len(movies) or id < 0 or not movies[id]:
+        return None
+    mov = movies[id]
+    mov.name = movie.name
+    mov.cast = movie.cast
+    return get_movie(id)
