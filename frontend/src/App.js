@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import TextField from '@mui/material/TextField';
+import './App.css'; // Import your CSS file
 
 function App() {
+  const [movieId, setMovieId] = useState('');
+
+  const handleMovieIdChange = (event) => {
+    setMovieId(event.target.value);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Welcome Everyone, Learn React!!!
-        </a>
-      </header>
+      <div className="TextField-container">
+        <TextField
+          id="movieId"
+          label="Enter Movie ID"
+          value={movieId}
+          onChange={handleMovieIdChange}
+          className="TextField"
+        />
+      </div>
+      <p>Movie ID: {movieId}</p>
     </div>
   );
 }
