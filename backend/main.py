@@ -58,3 +58,8 @@ def delete_movie(id: int):
     mov = get_movie(id)
     movies[id] = None
     return mov
+
+@app.post("/movies/add")
+def post_movie(movie: Movie):
+    movies.append(movie)
+    return len(movies)
