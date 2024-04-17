@@ -1,35 +1,44 @@
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   text-align: center;
+  height: 100vh; /* Set the height of the container to 100% of the viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .TextField-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f0f0f0; 
+  margin-top: 20px; /* Add some space between the top of the container and the input */
 }
 
 .TextField {
   width: 300px;
-  background-color: white; 
-  padding: 12px; 
-  border-radius: 6px; 
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  background-color: white;
+  padding: 12px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.TextField input {
-  font-size: 16px; 
-}
-
-.TextField label {
-  font-size: 14px; 
-}
-
+.TextField input,
+.TextField label,
 .TextField button {
   font-size: 16px;
 }
 
+.TextField label {
+  display: block; /* Ensure labels are displayed on their own line */
+  margin-bottom: 8px; /* Add some space below the label */
+}
+
+.TextField button {
+  margin-top: 12px; /* Add some space above the button */
+}
+
 .TextField-container p {
-  margin-top: 16px; 
+  margin-top: 16px;
 }
